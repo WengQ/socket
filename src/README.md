@@ -10,5 +10,9 @@
 3. Sockets： 使用TCP协议十下网络通信的Socket相关的类。
    TCP协议是面向连接的，可靠有序的，以*字节流*的形式发送数据的。
    客户端的Socket类，服务端的ServerSocket类。
+   客户端与服务器端是用输入输出流来交互的。
 4. Datagram： 使用UDP协议，将数据保存在数据报中，通过网络进行通信。
-
+   UDP协议在传输数据的时候会把数据封装成数据报的形式，即Datagram。
+   在数据报中指明所要到达的Socket，然后再将数据报发送出去。
+   主要使用的是DatagramPacket类（数据包类）和DatagramSocket类（端到端通信的类）。
+   客户端与服务器端用数据包DatagramPacket来交互。
