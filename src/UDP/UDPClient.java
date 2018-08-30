@@ -17,8 +17,8 @@ public class UDPClient {
          */
         //1.定义服务器的地址、端口号、数据
         InetAddress address=InetAddress.getByName("localhost");
-        int port=8800;
-        byte[] data="用户名：admin;密码：123".getBytes();
+        int port=8000;
+        byte[] data="用户名：tom;密码：456".getBytes();
         //2.创建数据报，包含发送的数据信息
         DatagramPacket packet=new DatagramPacket(data, data.length, address, port);
         //3.创建DatagramSocket对象
