@@ -13,7 +13,6 @@ public class UDPServer {
         System.out.println("****服务器端已经启动，等待客户端发送数据***");
 
         while (true){
-
             byte[] data = new byte[1024];
             DatagramPacket datagramPacket = new DatagramPacket(data,data.length);
             socket.receive(datagramPacket);
@@ -22,8 +21,7 @@ public class UDPServer {
 
             count++;//统计客户端的数量
             System.out.println("客户端的数量："+count);
-            //InetAddress address=socket.getInetAddress();
-            //System.out.println("当前客户端的IP："+address.getHostAddress());
+
         }
     }
 }

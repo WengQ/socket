@@ -1,12 +1,10 @@
-package socket;
-
-import sun.applet.Main;
+package TCP;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 //这是一个单线程的server程序。监听8888端口，将读到的客户端信息打印出来
-public class SimpleServer {
+public class SimpleTCPServer {
     public static void main(String[] args) {
         ServerSocket serverSocket;
         try {

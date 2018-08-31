@@ -1,11 +1,6 @@
-package socket;
+package TCP;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -17,7 +12,7 @@ import java.net.Socket;
  * 每一个客户端请求，服务端创建一个子线程的Socket与该客户端进行连接
  * 主线程继续等待新的客户端请求。
  */
-public class Server {
+public class TCPServer {
     public static void main(String[] args) {
         try {
             //1.创建一个服务器端Socket，即ServerSocket，指定绑定的端口，并监听此端口
@@ -31,7 +26,9 @@ public class Server {
                 //调用accept()方法开始监听，等待客户端的连接
                 socket=serverSocket.accept();
                 //创建一个新的线程
-                ServerThread serverThread=new ServerThread(socket);
+                TCPServerThread serverThread=new TCPServerThread(socket);
+                //将工作线程优先级降低为4（默认为5），这样服务器才能高效运行（经验）
+                serverThread.setPriority(4);
                 //启动线程
                 serverThread.start();
 

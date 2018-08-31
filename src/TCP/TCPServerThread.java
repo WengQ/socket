@@ -1,4 +1,4 @@
-package socket;
+package TCP;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,13 +9,13 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 /*
- * 服务器线程处理类
+ * TCP服务器线程处理类
  */
-public class ServerThread extends Thread {
+public class TCPServerThread extends Thread {
     // 和本线程相关的Socket
     Socket socket = null;
 
-    public ServerThread(Socket socket) {
+    public TCPServerThread(Socket socket) {
         this.socket = socket;
     }
 
